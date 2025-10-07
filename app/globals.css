@@ -157,23 +157,25 @@
     }
   }
 
-  /* Custom scrollbar styling for mobile */
+  /* Custom scrollbar styling for mobile - hidden by default */
   @media (max-width: 1023px) {
     ::-webkit-scrollbar {
-      width: 6px;
+      width: 0px;
+      background: transparent;
     }
     
+    /* Show scrollbar only when scrolling */
     ::-webkit-scrollbar-track {
-      background: rgba(21, 27, 61, 0.3);
+      background: transparent;
     }
     
     ::-webkit-scrollbar-thumb {
-      background: rgba(243, 186, 47, 0.6);
-      border-radius: 3px;
+      background: transparent;
+      border-radius: 0px;
     }
     
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(243, 186, 47, 0.8);
+      background: transparent;
     }
   }
 }
