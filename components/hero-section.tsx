@@ -59,7 +59,7 @@ export function HeroSection() {
             <a
               aria-label="Telegram"
               href="#"
-              className="w-12 h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-opacity"
+              className="w-12 h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-all hover:-translate-y-0.5"
               title="Telegram"
             >
               <Send className="text-white" />
@@ -67,7 +67,7 @@ export function HeroSection() {
             <a
               aria-label="Twitter / X"
               href="#"
-              className="w-12 h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-opacity"
+              className="w-12 h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-all hover:-translate-y-0.5"
               title="Twitter / X"
             >
               <Twitter className="text-white" />
@@ -75,7 +75,7 @@ export function HeroSection() {
             <a
               aria-label="Discord"
               href="#"
-              className="w-12 h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-opacity"
+              className="w-12 h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-all hover:-translate-y-0.5"
               title="Discord"
             >
               <MessageCircle className="text-white" />
@@ -84,14 +84,14 @@ export function HeroSection() {
         </div>
 
         {/* Right: main mascot visual */}
-        <div className="relative hidden lg:block">
+        <div className="relative hidden lg:block group">
           <div className="absolute inset-0 -z-10 blur-3xl bg-[#f3ba2f]/20 rounded-full translate-y-10" />
           <Image
             src="/images/doxxed-logo.png"
             alt="FOURFOOT degen mascot"
             width={560}
             height={560}
-            className="select-none pointer-events-none drop-shadow-2xl rounded-[22px] ring-4 ring-[#f3ba2f]/70 transition-transform duration-500 hover:scale-[1.03] anim-bob"
+            className="select-none drop-shadow-2xl rounded-[22px] ring-4 ring-[#f3ba2f]/70 transition-transform duration-300 hover:scale-[1.04] hover:rotate-[1deg] hover-wiggle anim-bob"
             priority
           />
         </div>

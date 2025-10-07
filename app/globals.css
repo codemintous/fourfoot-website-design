@@ -243,3 +243,35 @@
 .anim-bob {
   animation: anim-bob 2.5s ease-in-out infinite;
 }
+
+/* Micro hover animations for mascot and slight lift; respect reduced motion */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1.2deg);
+  }
+  75% {
+    transform: rotate(-1.2deg);
+  }
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 320ms ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Prefer reduced motion: turn off continuous bob and wiggle */
+@media (prefers-reduced-motion: reduce) {
+  .anim-bob {
+    animation: none !important;
+  }
+  .hover-wiggle:hover {
+    animation: none !important;
+  }
+}
