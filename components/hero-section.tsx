@@ -65,7 +65,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl grid lg:grid-cols-[1.2fr_0.8fr] items-center gap-10">
+      <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-6 lg:gap-10">
         {/* Left: headline + actions + about */}
         <div className="space-y-6 text-center lg:text-left">
           {/* removed badge */}
@@ -139,23 +139,23 @@ export function HeroSection() {
         </div>
 
         {/* Right: main mascot visual with meme background */}
-        <div className="relative hidden lg:block group">
+        <div className="relative block group">
           {/* Background glow */}
           <div className="absolute inset-0 -z-10 blur-3xl bg-[#f3ba2f]/20 rounded-full translate-y-10" />
           
           {/* Meme-style background elements */}
           <div className="absolute inset-0 -z-5 pointer-events-none">
-            {/* Floating "4" icons */}
-            <div className="absolute -top-16 -left-16 text-4xl font-black text-[#f3ba2f]/30 animate-float" style={{ animationDelay: '0s' }}>
+            {/* Floating "4" icons - hidden on mobile */}
+            <div className="absolute -top-16 -left-16 text-4xl font-black text-[#f3ba2f]/30 animate-float hidden sm:block" style={{ animationDelay: '0s' }}>
               4
             </div>
-            <div className="absolute -top-8 -right-20 text-3xl font-black text-[#ff6b35]/30 animate-float" style={{ animationDelay: '1s' }}>
+            <div className="absolute -top-8 -right-20 text-3xl font-black text-[#ff6b35]/30 animate-float hidden sm:block" style={{ animationDelay: '1s' }}>
               4
             </div>
-            <div className="absolute -bottom-12 -left-12 text-3xl font-black text-[#f3ba2f]/25 animate-float" style={{ animationDelay: '2s' }}>
+            <div className="absolute -bottom-12 -left-12 text-3xl font-black text-[#f3ba2f]/25 animate-float hidden sm:block" style={{ animationDelay: '2s' }}>
               4
             </div>
-            <div className="absolute -bottom-8 -right-16 text-4xl font-black text-[#ff6b35]/25 animate-float" style={{ animationDelay: '1.5s' }}>
+            <div className="absolute -bottom-8 -right-16 text-4xl font-black text-[#ff6b35]/25 animate-float hidden sm:block" style={{ animationDelay: '1.5s' }}>
               4
             </div>
             
@@ -200,30 +200,32 @@ export function HeroSection() {
               />
             ))}
             
-            {/* Meme text elements */}
-            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 text-sm font-black text-[#f3ba2f]/40 animate-float" style={{ animationDelay: '2.8s' }}>
+            {/* Meme text elements - hidden on mobile */}
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 text-sm font-black text-[#f3ba2f]/40 animate-float hidden md:block" style={{ animationDelay: '2.8s' }}>
               TO THE MOON
             </div>
-            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-sm font-black text-[#ff6b35]/40 animate-float" style={{ animationDelay: '1.7s' }}>
+            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-sm font-black text-[#ff6b35]/40 animate-float hidden md:block" style={{ animationDelay: '1.7s' }}>
               DIAMOND HANDS
             </div>
-            <div className="absolute top-1/2 -left-24 transform -translate-y-1/2 text-sm font-black text-[#f3ba2f]/35 animate-float" style={{ animationDelay: '0.3s', writingMode: 'vertical-rl' }}>
+            <div className="absolute top-1/2 -left-24 transform -translate-y-1/2 text-sm font-black text-[#f3ba2f]/35 animate-float hidden lg:block" style={{ animationDelay: '0.3s', writingMode: 'vertical-rl' }}>
               HODL
             </div>
-            <div className="absolute top-1/2 -right-24 transform -translate-y-1/2 text-sm font-black text-[#ff6b35]/35 animate-float" style={{ animationDelay: '2.1s', writingMode: 'vertical-rl' }}>
+            <div className="absolute top-1/2 -right-24 transform -translate-y-1/2 text-sm font-black text-[#ff6b35]/35 animate-float hidden lg:block" style={{ animationDelay: '2.1s', writingMode: 'vertical-rl' }}>
               WAGMI
             </div>
           </div>
           
           {/* Main mascot image */}
-          <Image
-            src="/image-Photoroom.png"
-            alt="FOURFOOT degen mascot"
-            width={560}
-            height={560}
-            className="select-none drop-shadow-2xl rounded-[22px] ring-4 ring-[#f3ba2f]/70 transition-all duration-500 hover:scale-110 hover:rotate-3 hover:drop-shadow-[0_25px_50px_rgba(243,186,47,0.4)] hover:ring-[#f3ba2f] hover:ring-8 anim-bob relative z-10 cursor-pointer"
-            priority
-          />
+          <div className="flex justify-center">
+            <Image
+              src="/image-Photoroom.png"
+              alt="FOURFOOT degen mascot"
+              width={560}
+              height={560}
+              className="select-none drop-shadow-2xl rounded-[22px] ring-4 ring-[#f3ba2f]/70 transition-all duration-500 hover:scale-110 hover:rotate-3 hover:drop-shadow-[0_25px_50px_rgba(243,186,47,0.4)] hover:ring-[#f3ba2f] hover:ring-8 anim-bob relative z-10 cursor-pointer w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[560px] lg:h-[560px]"
+              priority
+            />
+          </div>
           
           {/* Hover glow effect */}
           <div className="absolute inset-0 rounded-[22px] bg-gradient-to-r from-[#f3ba2f]/20 via-[#ff6b35]/20 to-[#f3ba2f]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl scale-110" />
