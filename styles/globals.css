@@ -116,7 +116,8 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    /* removed 'outline-ring/50' which is not a valid Tailwind class */
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;

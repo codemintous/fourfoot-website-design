@@ -1,105 +1,99 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Send, Twitter, MessageCircle } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-[#f3ba2f]/10 rounded-full blur-3xl animate-pulse-glow" />
-        <div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-[#ff6b35]/10 rounded-full blur-3xl animate-pulse-glow"
-          style={{ animationDelay: "1.5s" }}
-        />
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-6">
+      {/* toned-down ambient blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#f3ba2f]/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] bg-[#ff6b35]/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Text content */}
-          <div className="space-y-8 text-center lg:text-left">
-            <div className="inline-block">
-              <div className="bg-[#151b3d] border-2 border-[#f3ba2f] rounded-full px-6 py-3 text-sm font-bold text-[#f3ba2f] mb-6 inline-flex items-center gap-2 animate-neon-border">
-                <span className="w-2 h-2 bg-[#f3ba2f] rounded-full animate-pulse" />
-                BNB CHAIN MEME REVOLUTION
-              </div>
-            </div>
+      <div className="relative z-10 w-full max-w-6xl grid lg:grid-cols-[1.2fr_0.8fr] items-center gap-10">
+        {/* Left: headline + actions + about */}
+        <div className="space-y-6 text-center lg:text-left">
+          {/* removed badge */}
+          <h1 className="text-5xl md:text-7xl font-black leading-[0.95]" style={{ fontFamily: "var(--font-fredoka)" }}>
+            <span className="text-[#f3ba2f]">$FOURFOOT</span>
+            <span className="block text-white">4EVER BNB</span>
+          </h1>
 
-            <h1
-              className="text-6xl md:text-8xl lg:text-9xl font-black leading-none"
+          <p className="text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            BNB had the hand, now it’s got the foot. <span className="text-white font-semibold">$FOURFOOT</span>{" "}
+            continues the $4 legacy—born on BNB, driven by degens, built to move the culture forward. We are all{" "}
+            <span className="text-[#f3ba2f] font-semibold">4EVER BNB</span>.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <a
+              href="#"
+              className="inline-flex items-center justify-center rounded-full bg-[#f3ba2f] text-black font-black px-8 py-4 text-lg transition-transform hover:scale-105"
               style={{ fontFamily: "var(--font-fredoka)" }}
             >
-              <span className="text-[#f3ba2f] block">$FOURFOOT</span>
-              <span className="text-white block mt-2 text-5xl md:text-6xl">STEPPING UP</span>
-              <span className="text-[#ff6b35] block">THE GAME</span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed font-bold">
-              BNB had the hand 🖐️ now it&apos;s got the FOOT 🦶
-              <br />
-              <span className="text-[#f3ba2f]">We&apos;re taking the next step in the meme revolution!</span>
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button
-                size="lg"
-                className="bg-[#f3ba2f] hover:bg-[#d9a520] text-black font-black text-xl px-10 py-7 rounded-full group transition-all hover:scale-105"
-                style={{ fontFamily: "var(--font-fredoka)" }}
-              >
-                BUY $FOURFOOT
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-3 border-[#ff6b35] text-[#ff6b35] hover:bg-[#ff6b35] hover:text-black font-black text-xl px-10 py-7 rounded-full bg-transparent transition-all hover:scale-105"
-                style={{ fontFamily: "var(--font-fredoka)" }}
-              >
-                VIEW CHART
-              </Button>
-            </div>
-
-            <div className="flex items-center gap-6 justify-center lg:justify-start text-sm flex-wrap">
-              <div className="bg-[#151b3d] border border-[#f3ba2f]/30 rounded-xl px-6 py-4">
-                <div className="text-3xl font-black text-[#f3ba2f]" style={{ fontFamily: "var(--font-fredoka)" }}>
-                  4EVER
-                </div>
-                <div className="text-[#a8b3cf] font-bold">BNB CHAIN</div>
-              </div>
-              <div className="bg-[#151b3d] border border-[#ff6b35]/30 rounded-xl px-6 py-4">
-                <div className="text-3xl font-black text-[#ff6b35]" style={{ fontFamily: "var(--font-fredoka)" }}>
-                  100%
-                </div>
-                <div className="text-[#a8b3cf] font-bold">DEGEN VIBES</div>
-              </div>
-              <div className="bg-[#151b3d] border border-[#f3ba2f]/30 rounded-xl px-6 py-4">
-                <div className="text-3xl font-black text-[#f3ba2f]" style={{ fontFamily: "var(--font-fredoka)" }}>
-                  🔥
-                </div>
-                <div className="text-[#a8b3cf] font-bold">LP BURNED</div>
-              </div>
-            </div>
+              BUY $FOURFOOT
+              <ArrowRight className="ml-2" />
+            </a>
+            <a
+              href="#"
+              className="inline-flex items-center justify-center rounded-full border-2 border-[#ff6b35] text-[#ff6b35] font-black px-8 py-4 text-lg transition-colors hover:bg-[#ff6b35] hover:text-black"
+              style={{ fontFamily: "var(--font-fredoka)" }}
+            >
+              VIEW CHART
+            </a>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative animate-float">
-              <div className="absolute inset-0 bg-[#f3ba2f]/20 rounded-full blur-3xl scale-75 animate-pulse-glow" />
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-photo_2025-10-06_23-55-49-Photoroom-OMTOsqIdlrvf0rqlPxxnpj8VNCA3Hm.png"
-                alt="FOURFOOT Mascot - The BNB Hand"
-                width={500}
-                height={500}
-                className="relative z-10 drop-shadow-2xl"
-                priority
-              />
-            </div>
+          {/* About card inline (no scroll) */}
+          <div className="bg-[#151b3d]/80 border border-[#f3ba2f]/30 rounded-2xl p-4 md:p-5 max-w-xl mx-auto lg:mx-0">
+            <h2 className="text-white text-xl font-black mb-1" style={{ fontFamily: "var(--font-fredoka)" }}>
+              About FOURFOOT
+            </h2>
+            <p className="text-sm text-[#a8b3cf]">
+              We’re taking the next step in the meme‑chain revolution. We are all{" "}
+              <span className="text-[#f3ba2f] font-semibold">4EVER BNB</span>.
+            </p>
+          </div>
+
+          {/* Socials row inside hero */}
+          <div className="flex items-center gap-4 justify-center lg:justify-start">
+            <a
+              aria-label="Telegram"
+              href="#"
+              className="w-12 h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-opacity"
+              title="Telegram"
+            >
+              <Send className="text-white" />
+            </a>
+            <a
+              aria-label="Twitter / X"
+              href="#"
+              className="w-12 h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-opacity"
+              title="Twitter / X"
+            >
+              <Twitter className="text-white" />
+            </a>
+            <a
+              aria-label="Discord"
+              href="#"
+              className="w-12 h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-opacity"
+              title="Discord"
+            >
+              <MessageCircle className="text-white" />
+            </a>
           </div>
         </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-[#f3ba2f] rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-[#f3ba2f] rounded-full animate-pulse" />
+        {/* Right: main mascot visual */}
+        <div className="relative hidden lg:block">
+          <div className="absolute inset-0 -z-10 blur-3xl bg-[#f3ba2f]/20 rounded-full translate-y-10" />
+          <Image
+            src="/images/doxxed-logo.png"
+            alt="FOURFOOT degen mascot"
+            width={560}
+            height={560}
+            className="select-none pointer-events-none drop-shadow-2xl rounded-[22px] ring-4 ring-[#f3ba2f]/70 transition-transform duration-500 hover:scale-[1.03] anim-bob"
+            priority
+          />
         </div>
       </div>
     </section>
