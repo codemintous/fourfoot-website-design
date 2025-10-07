@@ -149,7 +149,12 @@ export function HeroSection() {
               alt="FOURFOOT degen mascot"
               width={560}
               height={560}
-              className="select-none drop-shadow-2xl rounded-[22px] ring-4 ring-[#f3ba2f]/70 transition-all duration-500 hover:scale-110 hover:rotate-3 hover:drop-shadow-[0_25px_50px_rgba(243,186,47,0.4)] hover:ring-[#f3ba2f] hover:ring-8 anim-bob relative z-10 cursor-pointer w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[560px] lg:h-[560px]"
+              className="select-none drop-shadow-2xl rounded-[22px] ring-4 ring-[#f3ba2f]/70 transition-all duration-500 hover:scale-110 hover:rotate-3 hover:drop-shadow-[0_25px_50px_rgba(243,186,47,0.4)] hover:ring-[#f3ba2f] hover:ring-8 anim-bob relative z-10 cursor-pointer object-contain"
+              style={{
+                width: 'clamp(256px, 50vw, 560px)',
+                height: 'clamp(256px, 50vw, 560px)',
+                maxWidth: '100%'
+              }}
               priority
             />
           </div>
