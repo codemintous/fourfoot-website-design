@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowRight, Send, Twitter, MessageCircle } from "lucide-react"
+import { ArrowRight, Send, Twitter, MessageCircle, Users } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -223,30 +223,57 @@ export function HeroSection() {
           </div>
 
           {/* Socials row inside hero */}
-          <div className="flex items-center gap-4 justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-4">
+              <a
+                aria-label="Telegram"
+                href="https://x.com/4onbnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0088cc]/25 touch-manipulation relative group"
+                title="Telegram - Coming Soon"
+              >
+                <Send className="text-white w-6 h-6 sm:w-5 sm:h-5" />
+                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  Coming Soon
+                </span>
+              </a>
+              <a
+                aria-label="Twitter / X"
+                href="https://x.com/4onbnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1DA1F2]/25 touch-manipulation"
+                title="Twitter / X"
+              >
+                <Twitter className="text-white w-6 h-6 sm:w-5 sm:h-5" />
+              </a>
+              <a
+                aria-label="Discord"
+                href="https://x.com/4onbnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#5865F2]/25 touch-manipulation relative group"
+                title="Discord - Coming Soon"
+              >
+                <MessageCircle className="text-white w-6 h-6 sm:w-5 sm:h-5" />
+                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  Coming Soon
+                </span>
+              </a>
+            </div>
+            
+            {/* Join Community Button */}
             <a
-              aria-label="Telegram"
-              href="#"
-              className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0088cc]/25 touch-manipulation"
-              title="Telegram"
+              href="https://x.com/i/communities/1970662180841197771"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-6 py-3 text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#f3ba2f]/25 touch-manipulation min-h-[48px]"
+              style={{ fontFamily: "var(--font-fredoka)" }}
             >
-              <Send className="text-white w-6 h-6 sm:w-5 sm:h-5" />
-            </a>
-            <a
-              aria-label="Twitter / X"
-              href="#"
-              className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1DA1F2]/25 touch-manipulation"
-              title="Twitter / X"
-            >
-              <Twitter className="text-white w-6 h-6 sm:w-5 sm:h-5" />
-            </a>
-            <a
-              aria-label="Discord"
-              href="#"
-              className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#5865F2]/25 touch-manipulation"
-              title="Discord"
-            >
-              <MessageCircle className="text-white w-6 h-6 sm:w-5 sm:h-5" />
+              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>Join Community</span>
             </a>
           </div>
         </div>

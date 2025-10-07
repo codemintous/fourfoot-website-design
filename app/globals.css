@@ -124,8 +124,30 @@
 
   /* Allow vertical scrolling on mobile, single-screen on desktop */
   @media (max-width: 1023px) {
+    html {
+      scroll-behavior: smooth; /* smooth scrolling for all elements */
+      scroll-padding-top: 0; /* prevent scroll offset issues */
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    }
+    
     body {
       overflow-y: auto; /* allow scrolling on mobile/tablet */
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+      scroll-behavior: smooth; /* smooth scrolling animation */
+      scroll-padding-top: 0; /* prevent scroll offset issues */
+      overscroll-behavior: contain; /* prevent overscroll effects */
+    }
+    
+    /* Enhanced smooth scrolling for all scrollable elements */
+    * {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Optimize scrolling performance */
+    main, section, div {
+      will-change: scroll-position;
+      transform: translateZ(0); /* Force hardware acceleration */
     }
   }
 
@@ -147,6 +169,31 @@
   button, a, [role="button"] {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+  }
+
+  /* Smooth scrolling optimizations */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Mobile-specific scrolling optimizations */
+  @media (max-width: 1023px) {
+    /* Prevent scroll chaining and improve performance */
+    body {
+      overscroll-behavior-y: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Optimize touch scrolling */
+    * {
+      touch-action: pan-y;
+    }
+    
+    /* Improve scroll performance on mobile */
+    html, body {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   /* Improve text rendering on mobile */
