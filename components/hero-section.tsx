@@ -65,33 +65,33 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-6 lg:gap-10">
+      <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-8 lg:gap-10">
         {/* Left: headline + actions + about */}
-        <div className="space-y-6 text-center lg:text-left">
+        <div className="space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">
           {/* removed badge */}
-          <h1 className="text-5xl md:text-7xl font-black leading-[0.95]" style={{ fontFamily: "var(--font-fredoka)" }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] px-4 sm:px-0" style={{ fontFamily: "var(--font-fredoka)" }}>
             <span className="text-[#f3ba2f]">$FOURFOOT</span>
             <span className="block text-white">4EVER BNB</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
             BNB had the hand, now it’s got the foot. <span className="text-white font-semibold">$FOURFOOT</span>{" "}
             continues the $4 legacy—born on BNB, driven by degens, built to move the culture forward. We are all{" "}
             <span className="text-[#f3ba2f] font-semibold">4EVER BNB</span>.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="#"
-              className="inline-flex items-center justify-center rounded-full bg-[#f3ba2f] text-black font-black px-8 py-4 text-lg transition-transform hover:scale-105"
+              className="inline-flex items-center justify-center rounded-full bg-[#f3ba2f] text-black font-black px-8 py-4 sm:px-10 sm:py-5 text-lg sm:text-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#f3ba2f]/25 min-h-[56px] touch-manipulation"
               style={{ fontFamily: "var(--font-fredoka)" }}
             >
               BUY $FOURFOOT
-              <ArrowRight className="ml-2" />
+              <ArrowRight className="ml-2 w-5 h-5" />
             </a>
             <a
               href="#"
-              className="inline-flex items-center justify-center rounded-full border-2 border-[#ff6b35] text-[#ff6b35] font-black px-8 py-4 text-lg transition-colors hover:bg-[#ff6b35] hover:text-black"
+              className="inline-flex items-center justify-center rounded-full border-2 border-[#ff6b35] text-[#ff6b35] font-black px-8 py-4 sm:px-10 sm:py-5 text-lg sm:text-xl transition-all duration-300 hover:bg-[#ff6b35] hover:text-black hover:shadow-lg hover:shadow-[#ff6b35]/25 min-h-[56px] touch-manipulation"
               style={{ fontFamily: "var(--font-fredoka)" }}
             >
               VIEW CHART
@@ -99,7 +99,7 @@ export function HeroSection() {
           </div>
 
           {/* About card inline (no scroll) */}
-          <div className="bg-[#151b3d]/80 border border-[#f3ba2f]/30 rounded-2xl p-4 md:p-5 max-w-xl mx-auto lg:mx-0">
+          <div className="bg-[#151b3d]/80 border border-[#f3ba2f]/30 rounded-2xl p-4 md:p-5 max-w-xl mx-4 sm:mx-auto lg:mx-0">
             <h2 className="text-white text-xl font-black mb-1" style={{ fontFamily: "var(--font-fredoka)" }}>
               About FOURFOOT
             </h2>
@@ -114,32 +114,32 @@ export function HeroSection() {
             <a
               aria-label="Telegram"
               href="#"
-              className="w-12 h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-all hover:-translate-y-0.5"
+              className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0088cc]/25 touch-manipulation"
               title="Telegram"
             >
-              <Send className="text-white" />
+              <Send className="text-white w-6 h-6 sm:w-5 sm:h-5" />
             </a>
             <a
               aria-label="Twitter / X"
               href="#"
-              className="w-12 h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-all hover:-translate-y-0.5"
+              className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1DA1F2]/25 touch-manipulation"
               title="Twitter / X"
             >
-              <Twitter className="text-white" />
+              <Twitter className="text-white w-6 h-6 sm:w-5 sm:h-5" />
             </a>
             <a
               aria-label="Discord"
               href="#"
-              className="w-12 h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-all hover:-translate-y-0.5"
+              className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#5865F2]/25 touch-manipulation"
               title="Discord"
             >
-              <MessageCircle className="text-white" />
+              <MessageCircle className="text-white w-6 h-6 sm:w-5 sm:h-5" />
             </a>
           </div>
         </div>
 
         {/* Right: main mascot visual with meme background */}
-        <div className="relative block group">
+        <div className="relative block group order-1 lg:order-2">
           {/* Background glow */}
           <div className="absolute inset-0 -z-10 blur-3xl bg-[#f3ba2f]/20 rounded-full translate-y-10" />
           
