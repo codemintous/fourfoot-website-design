@@ -3,7 +3,7 @@ import { ArrowRight, Send, Twitter, MessageCircle } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-6 group/hero">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-6 group/hero pt-8 sm:pt-0">
       {/* Enhanced animated background */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Main ambient blobs with hover enhancement */}
@@ -64,7 +64,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-6 lg:gap-10">
+      <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-6 lg:gap-10 mt-4 sm:mt-0">
         {/* Right: main mascot visual with meme background - First on mobile */}
         <div className="relative block group order-1 lg:order-2 mb-6 lg:mb-0">
           {/* Background glow */}
