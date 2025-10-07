@@ -2,7 +2,7 @@ import { HeroSection } from "@/components/hero-section"
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden">
+    <main className="min-h-screen overflow-x-hidden lg:overflow-hidden">
       <HeroSection />
     </main>
   )

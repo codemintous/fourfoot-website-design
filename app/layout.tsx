@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${fredokaOne.variable} font-sans antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
