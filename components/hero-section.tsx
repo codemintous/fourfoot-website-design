@@ -3,7 +3,7 @@ import { ArrowRight, Send, Twitter, MessageCircle } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-6 group/hero pt-8 sm:pt-0">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-6 group/hero pt-8 pb-8 sm:pt-0 sm:pb-0">
       {/* Enhanced animated background */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Main ambient blobs with hover enhancement */}
