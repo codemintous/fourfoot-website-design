@@ -20,10 +20,10 @@ export function HeroSection() {
             key={i}
             className="absolute w-1 h-1 bg-[#f3ba2f] rounded-full opacity-20 animate-background-float"
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${8 + Math.random() * 4}s`
+              top: `${(i * 5) % 100}%`,
+              left: `${(i * 7) % 100}%`,
+              animationDelay: `${(i * 0.3) % 5}s`,
+              animationDuration: `${8 + (i * 0.2) % 4}s`
             }}
           />
         ))}
@@ -119,8 +119,8 @@ export function HeroSection() {
                 key={i}
                 className="absolute w-2 h-2 bg-[#f3ba2f] rounded-full opacity-60 animate-particle-float"
                 style={{
-                  top: `${20 + (i * 15)}%`,
-                  left: `${10 + (i * 15)}%`,
+                  top: `${20 + (i * 10)}%`,
+                  left: `${10 + (i * 12)}%`,
                   animationDelay: `${i * 0.5}s`,
                   animationDuration: `${4 + (i * 0.3)}s`
                 }}
