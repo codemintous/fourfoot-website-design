@@ -4,11 +4,65 @@ import { MascotPortal } from "./mascot-portal"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-6">
-      {/* toned-down ambient blobs */}
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-6 group/hero">
+      {/* Enhanced animated background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#f3ba2f]/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] bg-[#ff6b35]/10 rounded-full blur-3xl" />
+        {/* Main ambient blobs with hover enhancement */}
+        <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#f3ba2f]/10 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#f3ba2f]/20 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
+        <div className="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] bg-[#ff6b35]/10 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#ff6b35]/20 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
+        
+        {/* Additional floating orbs */}
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#f3ba2f]/5 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#f3ba2f]/15 group-hover/hero:scale-125 group-hover/hero:translate-x-8" />
+        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-[#ff6b35]/5 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#ff6b35]/15 group-hover/hero:scale-125 group-hover/hero:-translate-x-6" />
+        
+        {/* Animated background particles */}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-[#f3ba2f] rounded-full opacity-20 animate-background-float"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${8 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+        
+        {/* Interactive background grid */}
+        <div className="absolute inset-0 opacity-5 group-hover/hero:opacity-10 transition-opacity duration-1000">
+          <div className="grid grid-cols-12 grid-rows-8 h-full w-full">
+            {[...Array(96)].map((_, i) => (
+              <div
+                key={i}
+                className="border border-[#f3ba2f]/20 transition-all duration-500 group-hover/hero:border-[#f3ba2f]/40 group-hover/hero:bg-[#f3ba2f]/5"
+                style={{
+                  animationDelay: `${i * 0.05}s`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+        
+        {/* Floating crypto symbols */}
+        <div className="absolute top-10 left-10 text-2xl opacity-10 group-hover/hero:opacity-30 transition-all duration-1000 group-hover/hero:scale-110 animate-float" style={{ animationDelay: '0s' }}>
+          ₿
+        </div>
+        <div className="absolute top-20 right-20 text-xl opacity-10 group-hover/hero:opacity-30 transition-all duration-1000 group-hover/hero:scale-110 animate-float" style={{ animationDelay: '1s' }}>
+          Ξ
+        </div>
+        <div className="absolute bottom-20 left-20 text-lg opacity-10 group-hover/hero:opacity-30 transition-all duration-1000 group-hover/hero:scale-110 animate-float" style={{ animationDelay: '2s' }}>
+          💎
+        </div>
+        <div className="absolute bottom-10 right-10 text-xl opacity-10 group-hover/hero:opacity-30 transition-all duration-1000 group-hover/hero:scale-110 animate-float" style={{ animationDelay: '1.5s' }}>
+          🚀
+        </div>
+        
+        {/* Animated background waves */}
+        <div className="absolute inset-0 opacity-5 group-hover/hero:opacity-15 transition-opacity duration-1000">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#f3ba2f]/10 via-transparent to-[#ff6b35]/10 animate-wave" />
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tl from-[#ff6b35]/10 via-transparent to-[#f3ba2f]/10 animate-wave-reverse" />
+        </div>
       </div>
 
       <div className="relative z-10 w-full max-w-6xl grid lg:grid-cols-[1.2fr_0.8fr] items-center gap-10">
