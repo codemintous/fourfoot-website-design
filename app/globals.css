@@ -266,12 +266,137 @@
   transform: translateY(-2px);
 }
 
+/* Portal entrance animation */
+@keyframes portal-entrance {
+  0% {
+    transform: scale(0.3) rotate(180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(90deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-portal-entrance {
+  animation: portal-entrance 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Portal ring rotation */
+@keyframes portal-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-portal-rotate {
+  animation: portal-rotate 8s linear infinite;
+}
+
+/* Floating "4" with glow */
+@keyframes float-glow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 0 5px rgba(243, 186, 47, 0.5));
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(243, 186, 47, 0.8));
+  }
+}
+
+.animate-float-glow {
+  animation: float-glow 3s ease-in-out infinite;
+}
+
+/* Mascot eye glow */
+@keyframes eye-glow {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow: 0 0 5px rgba(243, 186, 47, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(243, 186, 47, 0.6);
+  }
+}
+
+.animate-eye-glow {
+  animation: eye-glow 2s ease-in-out infinite;
+}
+
+/* Portal particle animation */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px);
+    opacity: 0.9;
+  }
+}
+
+.animate-particle-float {
+  animation: particle-float 4s ease-in-out infinite;
+}
+
+/* Particle burst animation for hover effect */
+@keyframes particle-burst {
+  0% {
+    transform: translateX(0px) translateY(0px) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50px) translateY(-20px) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(100px) translateY(-40px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-particle-burst {
+  animation: particle-burst 0.8s ease-out forwards;
+}
+
 /* Prefer reduced motion: turn off continuous bob and wiggle */
 @media (prefers-reduced-motion: reduce) {
   .anim-bob {
     animation: none !important;
   }
   .hover-wiggle:hover {
+    animation: none !important;
+  }
+  .animate-portal-rotate {
+    animation: none !important;
+  }
+  .animate-float-glow {
+    animation: none !important;
+  }
+  .animate-eye-glow {
+    animation: none !important;
+  }
+  .animate-particle-float {
+    animation: none !important;
+  }
+  .animate-particle-burst {
     animation: none !important;
   }
 }

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { ArrowRight, Send, Twitter, MessageCircle } from "lucide-react"
+import { MascotPortal } from "./mascot-portal"
 
 export function HeroSection() {
   return (
@@ -83,17 +84,111 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right: main mascot visual */}
+        {/* Right: main mascot visual with meme background */}
         <div className="relative hidden lg:block group">
+          {/* Background glow */}
           <div className="absolute inset-0 -z-10 blur-3xl bg-[#f3ba2f]/20 rounded-full translate-y-10" />
+          
+          {/* Meme-style background elements */}
+          <div className="absolute inset-0 -z-5 pointer-events-none">
+            {/* Floating "4" icons */}
+            <div className="absolute -top-16 -left-16 text-4xl font-black text-[#f3ba2f]/30 animate-float" style={{ animationDelay: '0s' }}>
+              4
+            </div>
+            <div className="absolute -top-8 -right-20 text-3xl font-black text-[#ff6b35]/30 animate-float" style={{ animationDelay: '1s' }}>
+              4
+            </div>
+            <div className="absolute -bottom-12 -left-12 text-3xl font-black text-[#f3ba2f]/25 animate-float" style={{ animationDelay: '2s' }}>
+              4
+            </div>
+            <div className="absolute -bottom-8 -right-16 text-4xl font-black text-[#ff6b35]/25 animate-float" style={{ animationDelay: '1.5s' }}>
+              4
+            </div>
+            
+            {/* Diamond/trending up icons */}
+            <div className="absolute top-8 -right-8 text-2xl text-[#f3ba2f]/40 animate-bounce-slow" style={{ animationDelay: '0.5s' }}>
+              📈
+            </div>
+            <div className="absolute -top-12 left-8 text-2xl text-[#ff6b35]/40 animate-bounce-slow" style={{ animationDelay: '1.2s' }}>
+              💎
+            </div>
+            <div className="absolute bottom-16 -left-8 text-2xl text-[#f3ba2f]/35 animate-bounce-slow" style={{ animationDelay: '2.5s' }}>
+              🚀
+            </div>
+            
+            {/* Fire/moon icons */}
+            <div className="absolute top-20 -left-20 text-xl text-[#ff6b35]/30 animate-pulse-glow" style={{ animationDelay: '0.8s' }}>
+              🔥
+            </div>
+            <div className="absolute -bottom-16 right-8 text-xl text-[#f3ba2f]/30 animate-pulse-glow" style={{ animationDelay: '1.8s' }}>
+              🌙
+            </div>
+            
+            {/* BNB chain symbols */}
+            <div className="absolute top-4 left-4 text-lg text-[#f3ba2f]/20 animate-float" style={{ animationDelay: '3s' }}>
+              ⛓️
+            </div>
+            <div className="absolute bottom-4 right-4 text-lg text-[#ff6b35]/20 animate-float" style={{ animationDelay: '2.2s' }}>
+              ⛓️
+            </div>
+            
+            {/* Floating particles */}
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-[#f3ba2f] rounded-full opacity-40 animate-particle-float"
+                style={{
+                  top: `${15 + (i * 10)}%`,
+                  left: `${10 + (i * 12)}%`,
+                  animationDelay: `${i * 0.3}s`,
+                  animationDuration: `${3 + (i * 0.2)}s`
+                }}
+              />
+            ))}
+            
+            {/* Meme text elements */}
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 text-sm font-black text-[#f3ba2f]/40 animate-float" style={{ animationDelay: '2.8s' }}>
+              TO THE MOON
+            </div>
+            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-sm font-black text-[#ff6b35]/40 animate-float" style={{ animationDelay: '1.7s' }}>
+              DIAMOND HANDS
+            </div>
+            <div className="absolute top-1/2 -left-24 transform -translate-y-1/2 text-sm font-black text-[#f3ba2f]/35 animate-float" style={{ animationDelay: '0.3s', writingMode: 'vertical-rl' }}>
+              HODL
+            </div>
+            <div className="absolute top-1/2 -right-24 transform -translate-y-1/2 text-sm font-black text-[#ff6b35]/35 animate-float" style={{ animationDelay: '2.1s', writingMode: 'vertical-rl' }}>
+              WAGMI
+            </div>
+          </div>
+          
+          {/* Main mascot image */}
           <Image
-            src="/images/doxxed-logo.png"
+            src="/image-Photoroom.png"
             alt="FOURFOOT degen mascot"
             width={560}
             height={560}
-            className="select-none drop-shadow-2xl rounded-[22px] ring-4 ring-[#f3ba2f]/70 transition-transform duration-300 hover:scale-[1.04] hover:rotate-[1deg] hover-wiggle anim-bob"
+            className="select-none drop-shadow-2xl rounded-[22px] ring-4 ring-[#f3ba2f]/70 transition-all duration-500 hover:scale-110 hover:rotate-3 hover:drop-shadow-[0_25px_50px_rgba(243,186,47,0.4)] hover:ring-[#f3ba2f] hover:ring-8 anim-bob relative z-10 cursor-pointer"
             priority
           />
+          
+          {/* Hover glow effect */}
+          <div className="absolute inset-0 rounded-[22px] bg-gradient-to-r from-[#f3ba2f]/20 via-[#ff6b35]/20 to-[#f3ba2f]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl scale-110" />
+          
+          {/* Hover particle burst */}
+          <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-[#f3ba2f] rounded-full animate-particle-burst"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                  animationDelay: `${i * 0.1}s`,
+                  transform: `rotate(${i * 30}deg) translateX(100px)`
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
