@@ -228,11 +228,16 @@ export function HeroSection() {
             <div className="flex items-center gap-4">
               <a
                 aria-label="Telegram"
-                href="#"
-                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0088cc]/25 touch-manipulation"
-                title="Telegram"
+                href="https://x.com/4onbnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0088cc]/25 touch-manipulation relative group"
+                title="Telegram - Coming Soon"
               >
                 <Send className="text-white w-6 h-6 sm:w-5 sm:h-5" />
+                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  Coming Soon
+                </span>
               </a>
               <a
                 aria-label="Twitter / X"
@@ -246,11 +251,16 @@ export function HeroSection() {
               </a>
               <a
                 aria-label="Discord"
-                href="#"
-                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#5865F2]/25 touch-manipulation"
-                title="Discord"
+                href="https://x.com/4onbnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#5865F2]/25 touch-manipulation relative group"
+                title="Discord - Coming Soon"
               >
                 <MessageCircle className="text-white w-6 h-6 sm:w-5 sm:h-5" />
+                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  Coming Soon
+                </span>
               </a>
             </div>
             

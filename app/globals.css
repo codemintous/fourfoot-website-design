@@ -128,10 +128,18 @@
       overflow-y: auto; /* allow scrolling on mobile/tablet */
       -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
       scroll-behavior: smooth; /* smooth scrolling animation */
+      scroll-padding-top: 0; /* prevent scroll offset issues */
     }
     
     html {
       scroll-behavior: smooth; /* smooth scrolling for all elements */
+      scroll-padding-top: 0; /* prevent scroll offset issues */
+    }
+    
+    /* Enhanced smooth scrolling for all scrollable elements */
+    * {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
     }
   }
 

@@ -5,6 +5,13 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 
+// Import smooth scroll polyfill
+if (typeof window !== 'undefined') {
+  import('smoothscroll-polyfill').then((smoothscrollPolyfill) => {
+    smoothscrollPolyfill.polyfill()
+  })
+}
+
 const fredokaOne = Fredoka_One({
   weight: "400",
   subsets: ["latin"],
