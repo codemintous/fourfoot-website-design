@@ -234,7 +234,9 @@ export function HeroSection() {
             </a>
             <a
               aria-label="Twitter / X"
-              href="#"
+              href="https://x.com/4onbnb"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1DA1F2]/25 touch-manipulation"
               title="Twitter / X"
             >

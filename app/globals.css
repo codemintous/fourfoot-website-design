@@ -126,6 +126,12 @@
   @media (max-width: 1023px) {
     body {
       overflow-y: auto; /* allow scrolling on mobile/tablet */
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+      scroll-behavior: smooth; /* smooth scrolling animation */
+    }
+    
+    html {
+      scroll-behavior: smooth; /* smooth scrolling for all elements */
     }
   }
 
@@ -147,6 +153,11 @@
   button, a, [role="button"] {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+  }
+
+  /* Smooth scrolling optimizations */
+  * {
+    -webkit-overflow-scrolling: touch;
   }
 
   /* Improve text rendering on mobile */
