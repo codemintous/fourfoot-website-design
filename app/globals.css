@@ -158,11 +158,33 @@
   }
 
   body {
-    /* Dark gradient background with neon atmosphere */
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1429 100%);
+    /* Clean white background for all browsers */
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     @apply text-foreground antialiased;
+  }
+  
+  /* Ensure white background on all elements */
+  html {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+  
+  /* Browser-specific fixes */
+  @supports (-webkit-appearance: none) {
+    body {
+      background: #ffffff !important;
+      -webkit-background-size: auto !important;
+    }
+  }
+  
+  @supports (background: -moz-linear-gradient(transparent, transparent)) {
+    body {
+      background: #ffffff !important;
+    }
   }
 
   /* Mobile touch optimizations */

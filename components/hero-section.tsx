@@ -3,16 +3,16 @@ import { ArrowRight, Users } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-x-hidden px-6 group/hero pt-8 pb-8 sm:pt-0 sm:pb-0 lg:overflow-hidden">
-      {/* Enhanced animated background */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Main ambient blobs with hover enhancement */}
-        <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#f3ba2f]/10 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#f3ba2f]/20 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
-        <div className="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] bg-[#ff6b35]/10 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#ff6b35]/20 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-x-hidden px-6 group/hero pt-8 pb-8 sm:pt-0 sm:pb-0 lg:overflow-hidden bg-white">
+      {/* Clean white background with subtle effects */}
+      <div className="absolute inset-0 pointer-events-none bg-white">
+        {/* Subtle ambient blobs with hover enhancement */}
+        <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#f3ba2f]/5 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#f3ba2f]/10 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
+        <div className="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] bg-[#ff6b35]/5 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#ff6b35]/10 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
         
         {/* Additional floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#f3ba2f]/5 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#f3ba2f]/15 group-hover/hero:scale-125 group-hover/hero:translate-x-8" />
-        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-[#ff6b35]/5 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#ff6b35]/15 group-hover/hero:scale-125 group-hover/hero:-translate-x-6" />
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#f3ba2f]/3 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#f3ba2f]/8 group-hover/hero:scale-125 group-hover/hero:translate-x-8" />
+        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-[#ff6b35]/3 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#ff6b35]/8 group-hover/hero:scale-125 group-hover/hero:-translate-x-6" />
         
         {/* Animated background particles */}
         {[...Array(20)].map((_, i) => (
