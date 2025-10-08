@@ -159,22 +159,20 @@ export function HeroSection() {
             />
             
             {/* Social section directly below mascot - DESKTOP ONLY */}
-            <div className="hidden lg:flex flex-col items-center gap-6 mt-8">
+            <div className="hidden lg:flex flex-row items-center justify-center gap-6 mt-8">
               {/* Social Media Icons */}
-              <div className="flex items-center gap-6">
-                <a
-                  aria-label="X (formerly Twitter)"
-                  href="https://x.com/4onbnb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-16 h-16 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
-                  title="X (formerly Twitter)"
-                >
-                  <svg className="text-white w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </a>
-              </div>
+              <a
+                aria-label="X (formerly Twitter)"
+                href="https://x.com/4onbnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-16 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
+                title="X (formerly Twitter)"
+              >
+                <svg className="text-white w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
               
               {/* Join Community Button */}
               <a
@@ -193,22 +191,20 @@ export function HeroSection() {
             </div>
             
             {/* Social section directly below mascot - MOBILE ONLY */}
-            <div className="lg:hidden flex flex-col items-center gap-4 mt-6">
+            <div className="lg:hidden flex flex-row items-center justify-center gap-4 mt-6">
               {/* Social Media Icons */}
-              <div className="flex items-center gap-4">
-                <a
-                  aria-label="X (formerly Twitter)"
-                  href="https://x.com/4onbnb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
-                  title="X (formerly Twitter)"
-                >
-                  <svg className="text-white w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </a>
-              </div>
+              <a
+                aria-label="X (formerly Twitter)"
+                href="https://x.com/4onbnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
+                title="X (formerly Twitter)"
+              >
+                <svg className="text-white w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
               
               {/* Join Community Button */}
               <a
