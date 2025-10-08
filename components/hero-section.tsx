@@ -178,7 +178,7 @@ export function HeroSection() {
               
               {/* Join Community Button */}
               <a
-                href="https://x.com/i/communities/1970662180841197771"
+                href="https://x.com/4onbnb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-6 py-3 text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#f3ba2f]/30 touch-manipulation min-h-[48px] relative overflow-hidden group"
@@ -297,7 +297,7 @@ export function HeroSection() {
             
             {/* Join Community Button */}
             <a
-              href="https://x.com/i/communities/1970662180841197771"
+              href="https://x.com/4onbnb"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-8 py-4 text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#f3ba2f]/30 touch-manipulation min-h-[56px] relative overflow-hidden group"
