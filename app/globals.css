@@ -1,86 +1,36 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Dark theme colors only */
+  --background: #0a0e27;
+  --foreground: #ffffff;
+  --card: #151b3d;
+  --card-foreground: #ffffff;
+  --popover: #151b3d;
+  --popover-foreground: #ffffff;
+  --primary: #f3ba2f;
+  --primary-foreground: #000000;
+  --secondary: #1f2749;
+  --secondary-foreground: #ffffff;
+  --muted: #1f2749;
+  --muted-foreground: #a8b3cf;
+  --accent: #ff6b35;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #3d4a6e;
+  --input: #3d4a6e;
+  --ring: #f3ba2f;
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
   --font-fredoka: "Fredoka One", cursive;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
-}
-
 @theme inline {
-  /* Updated to use Fredoka One font which matches the bold, rounded style from reference */
   --font-sans: var(--font-fredoka), "Comic Sans MS", "Chalkboard SE", "Comic Neue", cursive, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 
-  /* BNB Chain meme coin color system with neon vibes */
+  /* BNB Chain meme coin color system */
   --color-primary: #f3ba2f;
   --color-primary-dark: #d9a520;
   --color-accent: #ff6b35;
@@ -101,14 +51,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {
@@ -119,23 +61,28 @@
   html,
   body {
     height: 100%;
-    overflow-x: hidden; /* prevent horizontal scroll */
+    overflow-x: hidden;
+    background: var(--background);
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    @apply text-foreground antialiased;
   }
 
   /* Allow vertical scrolling on mobile, single-screen on desktop */
   @media (max-width: 1023px) {
     html {
-      scroll-behavior: smooth; /* smooth scrolling for all elements */
-      scroll-padding-top: 0; /* prevent scroll offset issues */
-      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+      scroll-behavior: smooth;
+      scroll-padding-top: 0;
+      -webkit-overflow-scrolling: touch;
     }
     
     body {
-      overflow-y: auto; /* allow scrolling on mobile/tablet */
-      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-      scroll-behavior: smooth; /* smooth scrolling animation */
-      scroll-padding-top: 0; /* prevent scroll offset issues */
-      overscroll-behavior: contain; /* prevent overscroll effects */
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      scroll-padding-top: 0;
+      overscroll-behavior: contain;
     }
     
     /* Enhanced smooth scrolling for all scrollable elements */
@@ -147,7 +94,7 @@
     /* Optimize scrolling performance */
     main, section, div {
       will-change: scroll-position;
-      transform: translateZ(0); /* Force hardware acceleration */
+      transform: translateZ(0);
     }
   }
 
@@ -157,101 +104,12 @@
     }
   }
 
-  /* Safari-specific fixes for theme detection */
-  body {
-    /* Default to dark theme for better Safari compatibility */
-    background: #0a0e27;
-    background-color: #0a0e27;
-    color: #ffffff;
-    font-family: var(--font-sans);
-    @apply text-foreground antialiased;
-  }
-  
-  html {
-    background: #0a0e27;
-    background-color: #0a0e27;
-  }
-  
-  /* Safari iOS specific theme detection */
-  @media screen and (prefers-color-scheme: light) {
-    body {
-      background: #ffffff !important;
-      background-color: #ffffff !important;
-      color: #000000 !important;
-    }
-    
-    html {
-      background: #ffffff !important;
-      background-color: #ffffff !important;
-    }
-    
-    /* Force light text colors for all elements */
-    h1, h2, h3, h4, h5, h6, p, span, div, a {
-      color: #000000 !important;
-    }
-  }
-  
-  /* Safari iOS specific dark theme */
-  @media screen and (prefers-color-scheme: dark) {
-    body {
-      background: #0a0e27 !important;
-      background-color: #0a0e27 !important;
-      color: #ffffff !important;
-    }
-    
-    html {
-      background: #0a0e27 !important;
-      background-color: #0a0e27 !important;
-    }
-    
-    /* Force white text colors for all elements */
-    h1, h2, h3, h4, h5, h6, p, span, div, a {
-      color: #ffffff !important;
-    }
-    
-    /* Specific overrides for theme-aware classes */
-    .text-black {
-      color: #ffffff !important;
-    }
-    
-    .dark\\:text-white {
-      color: #ffffff !important;
-    }
-  }
-  
-  /* WebKit-specific fixes for Safari */
-  @supports (-webkit-appearance: none) {
-    body {
-      background: #0a0e27;
-      background-color: #0a0e27;
-      color: #ffffff;
-    }
-    
-    html {
-      background: #0a0e27;
-      background-color: #0a0e27;
-    }
-    
-    @media (prefers-color-scheme: light) {
-      body {
-        background: #ffffff !important;
-        background-color: #ffffff !important;
-        color: #000000 !important;
-      }
-      
-      html {
-        background: #ffffff !important;
-        background-color: #ffffff !important;
-      }
-    }
-  }
-
   /* Mobile touch optimizations */
   button, a, [role="button"] {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
   }
-  
+
   /* Safari-specific animation optimizations */
   @supports (-webkit-appearance: none) {
     * {
@@ -327,34 +185,6 @@
       }
     }
   }
-  
-  /* Mobile-specific scrolling optimizations */
-  @media (max-width: 1023px) {
-    /* Prevent scroll chaining and improve performance */
-    body {
-      overscroll-behavior-y: contain;
-      -webkit-overflow-scrolling: touch;
-    }
-    
-    /* Optimize touch scrolling */
-    * {
-      touch-action: pan-y;
-    }
-    
-    /* Improve scroll performance on mobile */
-    html, body {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  /* Improve text rendering on mobile */
-  @media (max-width: 768px) {
-    body {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-  }
 
   /* Custom scrollbar styling for mobile - hidden by default */
   @media (max-width: 1023px) {
@@ -363,7 +193,6 @@
       background: transparent;
     }
     
-    /* Show scrollbar only when scrolling */
     ::-webkit-scrollbar-track {
       background: transparent;
     }
@@ -375,6 +204,14 @@
     
     ::-webkit-scrollbar-thumb:hover {
       background: transparent;
+    }
+  }
+
+  /* Improve text rendering on mobile */
+  @media (max-width: 768px) {
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
   }
 }
@@ -389,7 +226,6 @@
 }
 
 .text-glow-yellow {
-  /* reduced from 8/15 to 4/8 blur radii */
   text-shadow: 0 0 4px rgba(243, 186, 47, 0.3), 0 0 8px rgba(243, 186, 47, 0.15);
 }
 
