@@ -180,28 +180,35 @@ export function HeroSection() {
         </div>
 
         {/* Left: headline + actions + about - Second on mobile */}
-        <div className="space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">
-          {/* removed badge */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] px-4 sm:px-0" style={{ fontFamily: "var(--font-fredoka)" }}>
-            <span className="text-[#f3ba2f]">$FOURFOOT</span>
-            <span className="block text-white">4EVER BNB</span>
-          </h1>
+        <div className="space-y-8 lg:space-y-10 text-center lg:text-left order-2 lg:order-1">
+          {/* Main Title */}
+          <div className="space-y-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] px-4 sm:px-0" style={{ fontFamily: "var(--font-fredoka)" }}>
+              <span className="text-[#f3ba2f]">$FOURFOOT</span>
+            </h1>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] px-4 sm:px-0" style={{ fontFamily: "var(--font-fredoka)" }}>
+              <span className="text-white">4EVER BNB</span>
+            </h2>
+          </div>
 
-          <p className="text-base sm:text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
-            BNB had the hand, now it's got the foot.
-          </p>
-          
-          <p className="text-base sm:text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
-            <span className="text-white font-semibold">$FOURFOOT</span> continues the $4 legacy, taking the next step in the meme-chain revolution.
-          </p>
-          
-          <p className="text-base sm:text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
-            Born on BNB, driven by degens, and built to move the culture forward.
-          </p>
-          
-          <p className="text-base sm:text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
-            We are all <span className="text-[#f3ba2f] font-semibold">4EVER BNB</span>
-          </p>
+          {/* Main Content Text */}
+          <div className="space-y-6 max-w-2xl mx-auto lg:mx-0 px-4 sm:px-0">
+            <p className="text-lg sm:text-xl md:text-2xl text-white font-medium leading-relaxed">
+              BNB had the hand, now it's got the foot.
+            </p>
+            
+            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed">
+              <span className="text-[#f3ba2f] font-bold">$FOURFOOT</span> continues the $4 legacy, taking the next step in the meme-chain revolution.
+            </p>
+            
+            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed">
+              Born on BNB, driven by degens, and built to move the culture forward.
+            </p>
+            
+            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed">
+              We are all <span className="text-[#f3ba2f] font-bold">4EVER BNB</span>
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
@@ -222,18 +229,18 @@ export function HeroSection() {
           </div>
 
           {/* About card inline (no scroll) */}
-          <div className="bg-[#151b3d]/80 border border-[#f3ba2f]/30 rounded-2xl p-4 md:p-5 max-w-xl mx-4 sm:mx-auto lg:mx-0">
-            <h2 className="text-white text-xl font-black mb-1" style={{ fontFamily: "var(--font-fredoka)" }}>
+          <div className="bg-[#151b3d]/80 border border-[#f3ba2f]/30 rounded-2xl p-6 md:p-8 max-w-2xl mx-4 sm:mx-auto lg:mx-0">
+            <h2 className="text-white text-2xl font-black mb-4" style={{ fontFamily: "var(--font-fredoka)" }}>
               About FOURFOOT
             </h2>
-            <p className="text-sm text-[#a8b3cf]">
-              We’re taking the next step in the meme‑chain revolution. We are all{" "}
-              <span className="text-[#f3ba2f] font-semibold">4EVER BNB</span>.
+            <p className="text-lg text-white leading-relaxed">
+              We're taking the next step in the meme‑chain revolution. We are all{" "}
+              <span className="text-[#f3ba2f] font-bold">4EVER BNB</span>.
             </p>
           </div>
 
           {/* Socials row inside hero */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start px-4 sm:px-0">
             {/* Social Media Icons */}
             <div className="flex items-center gap-4">
               <a
@@ -241,10 +248,10 @@ export function HeroSection() {
                 href="https://x.com/4onbnb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
+                className="w-16 h-16 sm:w-14 sm:h-14 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
                 title="X (formerly Twitter)"
               >
-                <svg className="text-white w-6 h-6 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="text-white w-7 h-7 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
               </a>
@@ -255,10 +262,10 @@ export function HeroSection() {
               href="https://x.com/i/communities/1970662180841197771"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-6 py-3 text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#f3ba2f]/25 touch-manipulation min-h-[48px]"
+              className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-8 py-4 text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#f3ba2f]/25 touch-manipulation min-h-[56px]"
               style={{ fontFamily: "var(--font-fredoka)" }}
             >
-              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+              <Users className="w-5 h-5 sm:w-6 sm:h-6" />
               <span>Join Community</span>
             </a>
           </div>
