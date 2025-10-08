@@ -3,7 +3,7 @@ import { ArrowRight, Users } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-x-hidden px-6 group/hero pt-8 pb-8 sm:pt-0 sm:pb-0 lg:overflow-hidden bg-[#0a0e27]">
+    <section className="relative min-h-[100svh] w-full max-w-full flex items-center justify-center overflow-x-hidden overflow-y-auto px-6 group/hero pt-8 pb-8 sm:pt-0 sm:pb-0 lg:overflow-hidden bg-[#0a0e27]">
       {/* Dark theme background */}
       <div className="absolute inset-0 pointer-events-none bg-[#0a0e27]">
         {/* Subtle ambient blobs with hover enhancement */}
@@ -64,7 +64,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-6 lg:gap-12 mt-4 sm:mt-0 py-8 lg:py-12">
+      <div className="relative z-10 w-full max-w-full mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-6 lg:gap-12 mt-4 sm:mt-0 py-8 lg:py-12">
         {/* Right: main mascot visual with meme background - First on mobile */}
         <div className="relative block group order-1 lg:order-2 mb-6 lg:mb-0">
           {/* Background glow */}

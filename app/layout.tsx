@@ -6,6 +6,7 @@ import { Suspense } from "react"
 import { AudioProvider } from "@/components/audio-provider"
 import { ThemeDetector } from "@/components/theme-detector"
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider"
+import { IOSTouchHandler } from "@/components/ios-touch-handler"
 import "./globals.css"
 
 // Import smooth scroll polyfill
@@ -100,6 +101,7 @@ export default function RootLayout({
       <body className={`${fredokaOne.variable} font-sans antialiased`}>
         <ThemeDetector />
         <SmoothScrollProvider />
+        <IOSTouchHandler />
         <AudioProvider />
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
