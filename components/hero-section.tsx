@@ -3,16 +3,16 @@ import { ArrowRight, Users } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-x-hidden px-6 group/hero pt-8 pb-8 sm:pt-0 sm:pb-0 lg:overflow-hidden">
-      {/* Enhanced animated background */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Main ambient blobs with hover enhancement */}
-        <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#f3ba2f]/10 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#f3ba2f]/20 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
-        <div className="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] bg-[#ff6b35]/10 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#ff6b35]/20 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-x-hidden px-6 group/hero pt-8 pb-8 sm:pt-0 sm:pb-0 lg:overflow-hidden bg-[#0a0e27] dark:bg-[#0a0e27] light:bg-white">
+      {/* Safari-compatible theme-aware background */}
+      <div className="absolute inset-0 pointer-events-none bg-[#0a0e27] dark:bg-[#0a0e27] light:bg-white">
+        {/* Subtle ambient blobs with hover enhancement */}
+        <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#f3ba2f]/5 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#f3ba2f]/10 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
+        <div className="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] bg-[#ff6b35]/5 rounded-full blur-3xl transition-all duration-1000 group-hover/hero:bg-[#ff6b35]/10 group-hover/hero:scale-110 group-hover/hero:blur-2xl" />
         
         {/* Additional floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#f3ba2f]/5 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#f3ba2f]/15 group-hover/hero:scale-125 group-hover/hero:translate-x-8" />
-        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-[#ff6b35]/5 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#ff6b35]/15 group-hover/hero:scale-125 group-hover/hero:-translate-x-6" />
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#f3ba2f]/3 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#f3ba2f]/8 group-hover/hero:scale-125 group-hover/hero:translate-x-8" />
+        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-[#ff6b35]/3 rounded-full blur-2xl transition-all duration-1200 group-hover/hero:bg-[#ff6b35]/8 group-hover/hero:scale-125 group-hover/hero:-translate-x-6" />
         
         {/* Animated background particles */}
         {[...Array(20)].map((_, i) => (
@@ -64,7 +64,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-6 lg:gap-10 mt-4 sm:mt-0">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-6 lg:gap-12 mt-4 sm:mt-0 py-8 lg:py-12">
         {/* Right: main mascot visual with meme background - First on mobile */}
         <div className="relative block group order-1 lg:order-2 mb-6 lg:mb-0">
           {/* Background glow */}
@@ -158,23 +158,53 @@ export function HeroSection() {
               priority
             />
             
-            {/* Social section directly below mascot - MOBILE ONLY */}
-            <div className="lg:hidden flex flex-col items-center gap-4 mt-6">
+            {/* Social section directly below mascot - DESKTOP ONLY */}
+            <div className="hidden lg:flex flex-row items-center justify-center gap-6 mt-8">
               {/* Social Media Icons */}
-              <div className="flex items-center gap-4">
-                <a
-                  aria-label="X (formerly Twitter)"
-                  href="https://x.com/4onbnb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
-                  title="X (formerly Twitter)"
-                >
-                  <svg className="text-white w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </a>
-              </div>
+              <a
+                aria-label="X (formerly Twitter)"
+                href="https://x.com/4onbnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-16 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
+                title="X (formerly Twitter)"
+              >
+                <svg className="text-white w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              
+              {/* Join Community Button */}
+              <a
+                href="https://x.com/i/communities/1970662180841197771"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#f3ba2f]/30 touch-manipulation min-h-[56px] relative overflow-hidden group"
+                style={{ fontFamily: "var(--font-fredoka)" }}
+              >
+                <span className="relative z-10 flex items-center gap-3">
+                  <Users className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                  <span>Join Community</span>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b35] to-[#f3ba2f] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+            </div>
+            
+            {/* Social section directly below mascot - MOBILE ONLY */}
+            <div className="lg:hidden flex flex-row items-center justify-center gap-4 mt-6">
+              {/* Social Media Icons */}
+              <a
+                aria-label="X (formerly Twitter)"
+                href="https://x.com/4onbnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
+                title="X (formerly Twitter)"
+              >
+                <svg className="text-white w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
               
               {/* Join Community Button */}
               <a
@@ -214,32 +244,32 @@ export function HeroSection() {
         </div>
 
         {/* Left: headline + actions + about - Second on mobile */}
-        <div className="space-y-8 lg:space-y-12 text-center lg:text-left order-2 lg:order-1">
+        <div className="space-y-8 lg:space-y-12 text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center">
           {/* Main Title */}
           <div className="space-y-2">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] px-4 sm:px-0" style={{ fontFamily: "var(--font-fredoka)" }}>
               <span className="text-[#f3ba2f]">$FOURFOOT</span>
             </h1>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] px-4 sm:px-0" style={{ fontFamily: "var(--font-fredoka)" }}>
-              <span className="text-white">4EVER BNB</span>
+              <span className="text-black dark:text-white">4EVER BNB</span>
             </h2>
           </div>
 
           {/* Main Content Text */}
           <div className="space-y-5 max-w-2xl mx-auto lg:mx-0 px-4 sm:px-0">
-            <p className="text-lg sm:text-xl md:text-2xl text-white font-medium leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-black dark:text-white font-medium leading-relaxed">
               BNB had the hand, now it's got the foot.
             </p>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-black dark:text-white leading-relaxed">
               <span className="text-[#f3ba2f] font-bold">$FOURFOOT</span> carries the $4 legacy, taking the next step in the meme-chain.
             </p>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-black dark:text-white leading-relaxed">
               Born on BNB, built by degens, made to move culture.
             </p>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-black dark:text-white leading-relaxed">
               We are <span className="text-[#f3ba2f] font-bold">4EVER BNB</span> 🟡
             </p>
           </div>
@@ -267,11 +297,11 @@ export function HeroSection() {
           </div>
 
           {/* About card inline (no scroll) */}
-          <div className="bg-gradient-to-br from-[#151b3d]/90 to-[#0f1429]/90 border border-[#f3ba2f]/40 rounded-2xl p-6 md:p-8 max-w-2xl mx-4 sm:mx-auto lg:mx-0 shadow-2xl shadow-[#f3ba2f]/10">
-            <h2 className="text-white text-2xl font-black mb-4" style={{ fontFamily: "var(--font-fredoka)" }}>
+          <div className="bg-gradient-to-br from-[#151b3d]/90 to-[#0f1429]/90 dark:bg-gradient-to-br dark:from-[#151b3d]/90 dark:to-[#0f1429]/90 light:bg-white/90 border border-[#f3ba2f]/40 rounded-2xl p-6 md:p-8 max-w-2xl mx-4 sm:mx-auto lg:mx-0 shadow-2xl shadow-[#f3ba2f]/10">
+            <h2 className="text-black dark:text-white text-2xl font-black mb-4" style={{ fontFamily: "var(--font-fredoka)" }}>
               Why FOURFOOT?
             </h2>
-            <p className="text-lg text-white leading-relaxed">
+            <p className="text-lg text-black dark:text-white leading-relaxed">
               The next evolution of meme culture on BNB Chain. Built by the community, for the community.{" "}
               <a 
                 href="https://x.com/i/communities/1970662180841197771"
@@ -284,39 +314,6 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Socials row - hidden on mobile, shown on desktop */}
-          <div className="hidden lg:flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start px-4 sm:px-0">
-            {/* Social Media Icons */}
-            <div className="flex items-center gap-4">
-              <a
-                aria-label="X (formerly Twitter)"
-                href="https://x.com/4onbnb"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-16 h-16 sm:w-14 sm:h-14 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
-                title="X (formerly Twitter)"
-              >
-                <svg className="text-white w-7 h-7 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-            </div>
-            
-            {/* Join Community Button */}
-            <a
-              href="https://x.com/i/communities/1970662180841197771"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-8 py-4 text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#f3ba2f]/30 touch-manipulation min-h-[56px] relative overflow-hidden group"
-              style={{ fontFamily: "var(--font-fredoka)" }}
-            >
-              <span className="relative z-10 flex items-center gap-3">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:scale-110" />
-                <span>Join Community</span>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b35] to-[#f3ba2f] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </a>
-          </div>
         </div>
 
 
