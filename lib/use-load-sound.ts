@@ -2,50 +2,39 @@
 
 import { useEffect, useRef, useState } from "react"
 
-// Generate a fun meme-style sound effect
-function createMemeSoundDataUrl(): string {
-  const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
-  const sampleRate = audioContext.sampleRate
-  const duration = 0.8 // seconds
-  const numSamples = sampleRate * duration
-  
-  // Create buffer
-  const buffer = audioContext.createBuffer(1, numSamples, sampleRate)
-  const channelData = buffer.getChannelData(0)
-  
-  // Generate a fun "boop" sound with multiple tones
-  for (let i = 0; i < numSamples; i++) {
-    const t = i / sampleRate
+// Simple beep sound using Web Audio API
+function createBeepSound(): string {
+  try {
+    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
+    const sampleRate = audioContext.sampleRate
+    const duration = 0.3
+    const numSamples = sampleRate * duration
     
-    // Main tone (descending pitch for "boop" effect)
-    const freq1 = 800 * Math.exp(-t * 3)
-    const tone1 = Math.sin(2 * Math.PI * freq1 * t)
+    const buffer = audioContext.createBuffer(1, numSamples, sampleRate)
+    const channelData = buffer.getChannelData(0)
     
-    // Harmonic
-    const freq2 = 1200 * Math.exp(-t * 4)
-    const tone2 = Math.sin(2 * Math.PI * freq2 * t) * 0.3
+    // Simple beep sound
+    for (let i = 0; i < numSamples; i++) {
+      const t = i / sampleRate
+      const freq = 800 * Math.exp(-t * 2) // Descending frequency
+      const envelope = Math.exp(-t * 4) // Fade out
+      channelData[i] = Math.sin(2 * Math.PI * freq * t) * envelope * 0.2
+    }
     
-    // Sub bass for richness
-    const freq3 = 200 * Math.exp(-t * 2)
-    const tone3 = Math.sin(2 * Math.PI * freq3 * t) * 0.4
-    
-    // Envelope (fade out)
-    const envelope = Math.exp(-t * 3)
-    
-    channelData[i] = (tone1 + tone2 + tone3) * envelope * 0.3
+    // Convert to WAV
+    const wav = audioBufferToWav(buffer)
+    const blob = new Blob([wav], { type: 'audio/wav' })
+    return URL.createObjectURL(blob)
+  } catch (error) {
+    console.log('Audio generation failed:', error)
+    return ''
   }
-  
-  // Convert to WAV
-  const wav = audioBufferToWav(buffer)
-  const blob = new Blob([wav], { type: 'audio/wav' })
-  return URL.createObjectURL(blob)
 }
 
-// Convert AudioBuffer to WAV format
 function audioBufferToWav(buffer: AudioBuffer): ArrayBuffer {
   const numChannels = buffer.numberOfChannels
   const sampleRate = buffer.sampleRate
-  const format = 1 // PCM
+  const format = 1
   const bitDepth = 16
   
   const bytesPerSample = bitDepth / 8
@@ -73,9 +62,7 @@ function audioBufferToWav(buffer: AudioBuffer): ArrayBuffer {
   writeString(view, 36, 'data')
   view.setUint32(40, dataLength, true)
   
-  // Write audio data
   floatTo16BitPCM(view, 44, data)
-  
   return arrayBuffer
 }
 
@@ -112,29 +99,34 @@ export function useLoadSound(soundUrl?: string, volume: number = 0.3) {
   const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
-    // Generate or use provided sound
-    const url = soundUrl || createMemeSoundDataUrl()
-    
-    // Create audio element
-    const audio = new Audio(url)
-    audio.volume = volume
-    audio.preload = "auto"
-    audioRef.current = audio
-
-    // Mark as ready when loaded
-    audio.addEventListener("canplaythrough", () => {
-      setIsReady(true)
-    })
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause()
-        audioRef.current = null
+    try {
+      const url = soundUrl || createBeepSound()
+      
+      if (!url) {
+        console.log('No audio URL available')
+        return
       }
-      // Clean up generated URL if we created it
-      if (!soundUrl && url.startsWith('blob:')) {
-        URL.revokeObjectURL(url)
+      
+      const audio = new Audio(url)
+      audio.volume = volume
+      audio.preload = "auto"
+      audioRef.current = audio
+
+      audio.addEventListener("canplaythrough", () => {
+        setIsReady(true)
+      })
+
+      return () => {
+        if (audioRef.current) {
+          audioRef.current.pause()
+          audioRef.current = null
+        }
+        if (!soundUrl && url.startsWith('blob:')) {
+          URL.revokeObjectURL(url)
+        }
       }
+    } catch (error) {
+      console.log('Audio setup failed:', error)
     }
   }, [soundUrl, volume])
 
@@ -145,11 +137,11 @@ export function useLoadSound(soundUrl?: string, volume: number = 0.3) {
       if (!audioRef.current || hasPlayedRef.current) return
 
       try {
-        // Try to play immediately (works if autoplay is allowed)
         await audioRef.current.play()
         hasPlayedRef.current = true
       } catch (error) {
-        // Autoplay blocked - play on first user interaction
+        console.log('Autoplay blocked, waiting for user interaction')
+        
         const playOnInteraction = async () => {
           if (!audioRef.current || hasPlayedRef.current) return
           
@@ -157,7 +149,6 @@ export function useLoadSound(soundUrl?: string, volume: number = 0.3) {
             await audioRef.current.play()
             hasPlayedRef.current = true
             
-            // Remove all listeners after playing
             document.removeEventListener("click", playOnInteraction)
             document.removeEventListener("keydown", playOnInteraction)
             document.removeEventListener("touchstart", playOnInteraction)
@@ -166,19 +157,15 @@ export function useLoadSound(soundUrl?: string, volume: number = 0.3) {
           }
         }
 
-        // Add listeners for first user interaction
         document.addEventListener("click", playOnInteraction, { once: true })
         document.addEventListener("keydown", playOnInteraction, { once: true })
         document.addEventListener("touchstart", playOnInteraction, { once: true })
       }
     }
 
-    // Small delay to ensure page is loaded
     const timer = setTimeout(playSound, 500)
-
     return () => clearTimeout(timer)
   }, [isReady])
 
   return { isReady, hasPlayed: hasPlayedRef.current }
 }
-
