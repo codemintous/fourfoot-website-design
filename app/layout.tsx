@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { AudioProvider } from "@/components/audio-provider"
 import { ThemeDetector } from "@/components/theme-detector"
+import { SmoothScrollProvider } from "@/components/smooth-scroll-provider"
 import "./globals.css"
 
 // Import smooth scroll polyfill
@@ -98,6 +99,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${fredokaOne.variable} font-sans antialiased`}>
         <ThemeDetector />
+        <SmoothScrollProvider />
         <AudioProvider />
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />

@@ -184,6 +184,11 @@
       background: #ffffff !important;
       background-color: #ffffff !important;
     }
+    
+    /* Force light text colors for all elements */
+    h1, h2, h3, h4, h5, h6, p, span, div, a {
+      color: #000000 !important;
+    }
   }
   
   /* Safari iOS specific dark theme */
@@ -197,6 +202,20 @@
     html {
       background: #0a0e27 !important;
       background-color: #0a0e27 !important;
+    }
+    
+    /* Force white text colors for all elements */
+    h1, h2, h3, h4, h5, h6, p, span, div, a {
+      color: #ffffff !important;
+    }
+    
+    /* Specific overrides for theme-aware classes */
+    .text-black {
+      color: #ffffff !important;
+    }
+    
+    .dark\\:text-white {
+      color: #ffffff !important;
     }
   }
   
@@ -262,9 +281,51 @@
     }
   }
 
-  /* Smooth scrolling optimizations */
+  /* Comprehensive smooth scrolling optimizations */
   * {
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Enhanced mobile smooth scrolling */
+  @media (max-width: 1023px) {
+    html {
+      scroll-behavior: smooth !important;
+      -webkit-overflow-scrolling: touch !important;
+      scroll-padding-top: 0;
+    }
+    
+    body {
+      scroll-behavior: smooth !important;
+      -webkit-overflow-scrolling: touch !important;
+      scroll-padding-top: 0;
+      overscroll-behavior: contain;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    
+    /* Force hardware acceleration for smooth scrolling */
+    main, section, div, article, header, footer {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      will-change: scroll-position;
+    }
+    
+    /* Safari-specific smooth scrolling fixes */
+    @supports (-webkit-appearance: none) {
+      html, body {
+        -webkit-overflow-scrolling: touch !important;
+        scroll-behavior: smooth !important;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      
+      * {
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        -webkit-transform: translate3d(0, 0, 0);
+      }
+    }
   }
   
   /* Mobile-specific scrolling optimizations */
