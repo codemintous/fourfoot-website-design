@@ -198,15 +198,15 @@ export function HeroSection() {
             </p>
             
             <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed">
-              <span className="text-[#f3ba2f] font-bold">$FOURFOOT</span> continues the $4 legacy, taking the next step in the meme-chain revolution.
+              <span className="text-[#f3ba2f] font-bold">$FOURFOOT</span> carries the $4 legacy, taking the next step in the meme-chain.
             </p>
             
             <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed">
-              Born on BNB, driven by degens, and built to move the culture forward.
+              Born on BNB, built by degens, made to move culture.
             </p>
             
             <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed">
-              We are all <span className="text-[#f3ba2f] font-bold">4EVER BNB</span>
+              We are <span className="text-[#f3ba2f] font-bold">4EVER BNB</span> 🟡
             </p>
           </div>
 
@@ -239,8 +239,8 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Socials row inside hero */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start px-4 sm:px-0">
+          {/* Socials row - hidden on mobile, shown on desktop */}
+          <div className="hidden lg:flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start px-4 sm:px-0">
             {/* Social Media Icons */}
             <div className="flex items-center gap-4">
               <a
@@ -269,6 +269,37 @@ export function HeroSection() {
               <span>Join Community</span>
             </a>
           </div>
+        </div>
+
+        {/* Mobile Social Section - Below mascot on mobile */}
+        <div className="lg:hidden flex flex-col items-center gap-6 mt-8 px-4">
+          {/* Social Media Icons */}
+          <div className="flex items-center gap-4">
+            <a
+              aria-label="X (formerly Twitter)"
+              href="https://x.com/4onbnb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-16 h-16 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
+              title="X (formerly Twitter)"
+            >
+              <svg className="text-white w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+          
+          {/* Join Community Button */}
+          <a
+            href="https://x.com/i/communities/1970662180841197771"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#f3ba2f]/25 touch-manipulation min-h-[56px]"
+            style={{ fontFamily: "var(--font-fredoka)" }}
+          >
+            <Users className="w-6 h-6" />
+            <span>Join Community</span>
+          </a>
         </div>
 
       </div>
