@@ -157,37 +157,51 @@
     }
   }
 
+  /* Safari-specific fixes for theme detection */
   body {
-    /* Respect system theme preference */
-    background: var(--background);
-    background-color: var(--background);
-    color: var(--color-foreground);
+    /* Default to dark theme for better Safari compatibility */
+    background: #0a0e27;
+    background-color: #0a0e27;
+    color: #ffffff;
     font-family: var(--font-sans);
     @apply text-foreground antialiased;
   }
   
-  /* Ensure proper background on all elements */
   html {
-    background: var(--background);
-    background-color: var(--background);
+    background: #0a0e27;
+    background-color: #0a0e27;
   }
   
-  /* Light theme specific styles */
-  @media (prefers-color-scheme: light) {
+  /* Safari iOS specific theme detection */
+  @media screen and (prefers-color-scheme: light) {
     body {
-      background: #ffffff;
-      background-color: #ffffff;
-      color: #000000;
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      color: #000000 !important;
     }
     
     html {
-      background: #ffffff;
-      background-color: #ffffff;
+      background: #ffffff !important;
+      background-color: #ffffff !important;
     }
   }
   
-  /* Dark theme specific styles */
-  @media (prefers-color-scheme: dark) {
+  /* Safari iOS specific dark theme */
+  @media screen and (prefers-color-scheme: dark) {
+    body {
+      background: #0a0e27 !important;
+      background-color: #0a0e27 !important;
+      color: #ffffff !important;
+    }
+    
+    html {
+      background: #0a0e27 !important;
+      background-color: #0a0e27 !important;
+    }
+  }
+  
+  /* WebKit-specific fixes for Safari */
+  @supports (-webkit-appearance: none) {
     body {
       background: #0a0e27;
       background-color: #0a0e27;
@@ -198,12 +212,54 @@
       background: #0a0e27;
       background-color: #0a0e27;
     }
+    
+    @media (prefers-color-scheme: light) {
+      body {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+      }
+      
+      html {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+      }
+    }
   }
 
   /* Mobile touch optimizations */
   button, a, [role="button"] {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+  }
+  
+  /* Safari-specific animation optimizations */
+  @supports (-webkit-appearance: none) {
+    * {
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      -webkit-transform: translate3d(0, 0, 0);
+      -webkit-transform-style: preserve-3d;
+    }
+    
+    /* Optimize animations for Safari */
+    .animate-float,
+    .animate-bounce-slow,
+    .animate-pulse-glow,
+    .animate-portal-entrance,
+    .animate-portal-rotate,
+    .animate-float-glow,
+    .animate-eye-glow,
+    .animate-particle-float,
+    .animate-particle-burst,
+    .animate-background-float,
+    .animate-wave,
+    .animate-wave-reverse,
+    .animate-grid-pulse {
+      -webkit-transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      will-change: transform;
+    }
   }
 
   /* Smooth scrolling optimizations */
