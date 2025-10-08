@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowRight, Send, Twitter, MessageCircle, Users } from "lucide-react"
+import { ArrowRight, Users } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -188,9 +188,19 @@ export function HeroSection() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
-            BNB had the hand, now it’s got the foot. <span className="text-white font-semibold">$FOURFOOT</span>{" "}
-            continues the $4 legacy—born on BNB, driven by degens, built to move the culture forward. We are all{" "}
-            <span className="text-[#f3ba2f] font-semibold">4EVER BNB</span>.
+            BNB had the hand, now it's got the foot.
+          </p>
+          
+          <p className="text-base sm:text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
+            <span className="text-white font-semibold">$FOURFOOT</span> continues the $4 legacy, taking the next step in the meme-chain revolution.
+          </p>
+          
+          <p className="text-base sm:text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
+            Born on BNB, driven by degens, and built to move the culture forward.
+          </p>
+          
+          <p className="text-base sm:text-lg md:text-xl text-[#a8b3cf] max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
+            We are all <span className="text-[#f3ba2f] font-semibold">4EVER BNB</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -227,40 +237,16 @@ export function HeroSection() {
             {/* Social Media Icons */}
             <div className="flex items-center gap-4">
               <a
-                aria-label="Telegram"
+                aria-label="X (formerly Twitter)"
                 href="https://x.com/4onbnb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#0088cc] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0088cc]/25 touch-manipulation relative group"
-                title="Telegram - Coming Soon"
+                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/25 touch-manipulation"
+                title="X (formerly Twitter)"
               >
-                <Send className="text-white w-6 h-6 sm:w-5 sm:h-5" />
-                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                  Coming Soon
-                </span>
-              </a>
-              <a
-                aria-label="Twitter / X"
-                href="https://x.com/4onbnb"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1DA1F2]/25 touch-manipulation"
-                title="Twitter / X"
-              >
-                <Twitter className="text-white w-6 h-6 sm:w-5 sm:h-5" />
-              </a>
-              <a
-                aria-label="Discord"
-                href="https://x.com/4onbnb"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 sm:w-12 sm:h-12 rounded-full bg-[#5865F2] flex items-center justify-center hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#5865F2]/25 touch-manipulation relative group"
-                title="Discord - Coming Soon"
-              >
-                <MessageCircle className="text-white w-6 h-6 sm:w-5 sm:h-5" />
-                <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                  Coming Soon
-                </span>
+                <svg className="text-white w-6 h-6 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
               </a>
             </div>
             
