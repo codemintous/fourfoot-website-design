@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Fredoka as Fredoka_One } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { AudioProvider } from "@/components/audio-provider"
 import "./globals.css"
 
 // Import smooth scroll polyfill
@@ -41,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${fredokaOne.variable} font-sans antialiased`}>
+        <AudioProvider />
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
