@@ -61,6 +61,8 @@
   html,
   body {
     height: 100%;
+    width: 100%;
+    max-width: 100vw;
     overflow-x: hidden;
     background: var(--background);
     background-color: var(--background);
@@ -69,32 +71,62 @@
     @apply text-foreground antialiased;
   }
 
-  /* Allow vertical scrolling on mobile, single-screen on desktop */
+  /* iOS Safari specific fixes */
   @media (max-width: 1023px) {
     html {
+      height: 100%;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       scroll-behavior: smooth;
       scroll-padding-top: 0;
-      -webkit-overflow-scrolling: touch;
+      /* Prevent horizontal scrolling */
+      position: relative;
     }
     
     body {
+      height: 100%;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       scroll-behavior: smooth;
       scroll-padding-top: 0;
       overscroll-behavior: contain;
+      /* Prevent horizontal scrolling */
+      position: relative;
+      /* Fix iOS Safari touch scrolling */
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
     }
     
-    /* Enhanced smooth scrolling for all scrollable elements */
+    /* Prevent horizontal scrolling on all elements */
     * {
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
+      max-width: 100%;
+      box-sizing: border-box;
     }
     
-    /* Optimize scrolling performance */
+    /* Remove conflicting transforms that cause horizontal scrolling */
     main, section, div {
-      will-change: scroll-position;
-      transform: translateZ(0);
+      /* Remove will-change and transform that cause issues */
+      position: relative;
+    }
+    
+    /* iOS Safari touch event fixes */
+    * {
+      touch-action: pan-y pinch-zoom;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Prevent horizontal scrolling on specific elements */
+    section, main, div {
+      touch-action: pan-y;
+      -webkit-overflow-scrolling: touch;
     }
   }
 
