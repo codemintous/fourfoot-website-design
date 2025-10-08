@@ -158,8 +158,8 @@ export function HeroSection() {
               priority
             />
             
-            {/* Social section directly below mascot */}
-            <div className="flex flex-col items-center gap-4 mt-6">
+            {/* Social section directly below mascot - MOBILE ONLY */}
+            <div className="lg:hidden flex flex-col items-center gap-4 mt-6">
               {/* Social Media Icons */}
               <div className="flex items-center gap-4">
                 <a
