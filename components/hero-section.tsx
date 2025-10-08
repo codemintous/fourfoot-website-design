@@ -181,11 +181,14 @@ export function HeroSection() {
                 href="https://x.com/i/communities/1970662180841197771"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-6 py-3 text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#f3ba2f]/25 touch-manipulation min-h-[48px]"
+                className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-6 py-3 text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#f3ba2f]/30 touch-manipulation min-h-[48px] relative overflow-hidden group"
                 style={{ fontFamily: "var(--font-fredoka)" }}
               >
-                <Users className="w-5 h-5" />
-                <span>Join Community</span>
+                <span className="relative z-10 flex items-center gap-3">
+                  <Users className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                  <span>Join Community</span>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b35] to-[#f3ba2f] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             </div>
           </div>
@@ -211,7 +214,7 @@ export function HeroSection() {
         </div>
 
         {/* Left: headline + actions + about - Second on mobile */}
-        <div className="space-y-8 lg:space-y-10 text-center lg:text-left order-2 lg:order-1">
+        <div className="space-y-8 lg:space-y-12 text-center lg:text-left order-2 lg:order-1">
           {/* Main Title */}
           <div className="space-y-2">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] px-4 sm:px-0" style={{ fontFamily: "var(--font-fredoka)" }}>
@@ -223,7 +226,7 @@ export function HeroSection() {
           </div>
 
           {/* Main Content Text */}
-          <div className="space-y-6 max-w-2xl mx-auto lg:mx-0 px-4 sm:px-0">
+          <div className="space-y-5 max-w-2xl mx-auto lg:mx-0 px-4 sm:px-0">
             <p className="text-lg sm:text-xl md:text-2xl text-white font-medium leading-relaxed">
               BNB had the hand, now it's got the foot.
             </p>
@@ -244,29 +247,33 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="#"
-              className="inline-flex items-center justify-center rounded-full bg-[#f3ba2f] text-black font-black px-8 py-4 sm:px-10 sm:py-5 text-lg sm:text-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#f3ba2f]/25 min-h-[56px] touch-manipulation"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-8 py-4 sm:px-10 sm:py-5 text-lg sm:text-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#f3ba2f]/30 min-h-[56px] touch-manipulation relative overflow-hidden group"
               style={{ fontFamily: "var(--font-fredoka)" }}
             >
-              BUY $FOURFOOT
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <span className="relative z-10 flex items-center">
+                BUY $FOURFOOT
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b35] to-[#f3ba2f] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             <a
               href="#"
-              className="inline-flex items-center justify-center rounded-full border-2 border-[#ff6b35] text-[#ff6b35] font-black px-8 py-4 sm:px-10 sm:py-5 text-lg sm:text-xl transition-all duration-300 hover:bg-[#ff6b35] hover:text-black hover:shadow-lg hover:shadow-[#ff6b35]/25 min-h-[56px] touch-manipulation"
+              className="inline-flex items-center justify-center rounded-full border-2 border-[#ff6b35] text-[#ff6b35] font-black px-8 py-4 sm:px-10 sm:py-5 text-lg sm:text-xl transition-all duration-300 hover:bg-[#ff6b35] hover:text-black hover:shadow-xl hover:shadow-[#ff6b35]/30 min-h-[56px] touch-manipulation relative overflow-hidden group"
               style={{ fontFamily: "var(--font-fredoka)" }}
             >
-              VIEW CHART
+              <span className="relative z-10">VIEW CHART</span>
+              <div className="absolute inset-0 bg-[#ff6b35] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </a>
           </div>
 
           {/* About card inline (no scroll) */}
-          <div className="bg-[#151b3d]/80 border border-[#f3ba2f]/30 rounded-2xl p-6 md:p-8 max-w-2xl mx-4 sm:mx-auto lg:mx-0">
+          <div className="bg-gradient-to-br from-[#151b3d]/90 to-[#0f1429]/90 border border-[#f3ba2f]/40 rounded-2xl p-6 md:p-8 max-w-2xl mx-4 sm:mx-auto lg:mx-0 shadow-2xl shadow-[#f3ba2f]/10">
             <h2 className="text-white text-2xl font-black mb-4" style={{ fontFamily: "var(--font-fredoka)" }}>
-              About FOURFOOT
+              Why FOURFOOT?
             </h2>
             <p className="text-lg text-white leading-relaxed">
-              We're taking the next step in the meme‑chain revolution. We are all{" "}
-              <span className="text-[#f3ba2f] font-bold">4EVER BNB</span>.
+              The next evolution of meme culture on BNB Chain. Built by the community, for the community.{" "}
+              <span className="text-[#f3ba2f] font-bold">Join the revolution.</span>
             </p>
           </div>
 
@@ -293,11 +300,14 @@ export function HeroSection() {
               href="https://x.com/i/communities/1970662180841197771"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-8 py-4 text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#f3ba2f]/25 touch-manipulation min-h-[56px]"
+              className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#f3ba2f] to-[#ff6b35] text-black font-black px-8 py-4 text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#f3ba2f]/30 touch-manipulation min-h-[56px] relative overflow-hidden group"
               style={{ fontFamily: "var(--font-fredoka)" }}
             >
-              <Users className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span>Join Community</span>
+              <span className="relative z-10 flex items-center gap-3">
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:scale-110" />
+                <span>Join Community</span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b35] to-[#f3ba2f] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
           </div>
         </div>
