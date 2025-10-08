@@ -158,32 +158,45 @@
   }
 
   body {
-    /* Clean white background for all browsers */
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    background-image: none !important;
+    /* Respect system theme preference */
+    background: var(--background);
+    background-color: var(--background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     @apply text-foreground antialiased;
   }
   
-  /* Ensure white background on all elements */
+  /* Ensure proper background on all elements */
   html {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
+    background: var(--background);
+    background-color: var(--background);
   }
   
-  /* Browser-specific fixes */
-  @supports (-webkit-appearance: none) {
+  /* Light theme specific styles */
+  @media (prefers-color-scheme: light) {
     body {
-      background: #ffffff !important;
-      -webkit-background-size: auto !important;
+      background: #ffffff;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    
+    html {
+      background: #ffffff;
+      background-color: #ffffff;
     }
   }
   
-  @supports (background: -moz-linear-gradient(transparent, transparent)) {
+  /* Dark theme specific styles */
+  @media (prefers-color-scheme: dark) {
     body {
-      background: #ffffff !important;
+      background: #0a0e27;
+      background-color: #0a0e27;
+      color: #ffffff;
+    }
+    
+    html {
+      background: #0a0e27;
+      background-color: #0a0e27;
     }
   }
 
